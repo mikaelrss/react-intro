@@ -32,13 +32,33 @@ function Title(props) {
 Det er gyldig å skrive React på denne måten, men "alle" bruker JSX fordi
 detter gjør koden både enklere å lese og skrive.
 
-Vi har nå sett hvordan vi definerer en komponent. Nå skal vi se hvordan vi setter 
+Vi har nå sett hvordan vi definerer en komponent. Nå skal vi se hvordan vi "rendrer"
 denne komponenten i applikasjonen vår.
 
+I React lager man en root-komponent som ofte bare kalles `App`.
 
+Vi definerer vår root-komponen til å se slik ut:
+
+```js
+function App() {
+  return <div>Dette er vår app!</div>;
+}
+```
+
+Denne putter vi inn i HTML-filen vår, ved å hente frem et spesifikt
+DOM-element med en vanlig javascript-selector `document.getElementById("root")`
+
+```js
+import App from "./App";
+
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
+```
+
+Når vi har fått 
 
 ```js
 function Title(props) {
-  return <h1}</h1>;
+  return <h1>{props.text}</h1>;
 }
 ```
