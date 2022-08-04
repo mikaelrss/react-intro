@@ -1,7 +1,12 @@
 import React from "react";
 
-const Title = (props) => {
-  return <h1>Hello world!</h1>;
-};
+// function Title() {
+//   return null
+// }
+
+function Title(props) {
+  if (props.small) return <h2>{props.children}</h2>;
+  return <h1>{props.children}</h1>;
+}
 
 export default Title;

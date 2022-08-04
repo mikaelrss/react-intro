@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 
+// export function useFetchData() {}
+
 export function useFetchData(url) {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState();
 
   React.useEffect(() => {
@@ -11,6 +13,9 @@ export function useFetchData(url) {
       .then((data) => {
         setIsLoading(false);
         setData(data);
+      })
+      .catch(() => {
+        setIsLoading(false);
       });
   }, [url]);
 
