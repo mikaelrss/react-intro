@@ -2,7 +2,6 @@ import React from "react";
 import Title from "./Title";
 
 function Dog(props) {
-  console.log(props);
   return (
     <div>
       <Title small>{props.title}</Title>
